@@ -1,8 +1,8 @@
 "use client"
+import  { useEffect } from 'react';
 import { app } from '@/config/firebaseConfig';
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
-import React, { useEffect } from 'react'
 
 const page = () => {
 
