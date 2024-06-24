@@ -4,7 +4,7 @@ import NewProject from './NewProject'
 import SideNav from '../dashboard/_components/SideNav'
 import Header from '../dashboard/_components/Header'
 
-const page = () => {
+const Page = () => {
   const [isSideNavOpen, setSideNavOpen] = useState(false);
 
   const toggleSideNav = () => {
@@ -25,4 +25,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

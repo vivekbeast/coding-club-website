@@ -3,7 +3,7 @@ import { useState } from "react";
 import SideNav from "../dashboard/_components/SideNav"
 import Header from "../dashboard/_components/Header";
 
-function page() {
+function Page() {
   const [isSideNavOpen, setSideNavOpen] = useState(false);
   const toggleSideNav = () => {
     setSideNavOpen(!isSideNavOpen);
@@ -23,4 +23,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
