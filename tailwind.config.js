@@ -17,6 +17,11 @@ module.exports = {
       },
     },
     extend: {
+      
+          fontFamily: {
+            oswald: ['Oswald', 'sans-serif'],
+            bebas: ['Bebas Neue', 'cursive'],
+          },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

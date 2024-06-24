@@ -1,12 +1,12 @@
 "use client"
 import { LogoutLink, useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
-import { GraduationCap, Hand, LayoutIcon, LogOutIcon, Settings } from 'lucide-react'
+import { GraduationCap, Hand, LayoutIcon, LogOutIcon, PenBox, Settings } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-function SideNav() {
+function SideNav({ isOpen }) {
   const { user } = useKindeBrowserClient();
   const [activeMenu, setActiveMenu] = useState(null);
   const router = useRouter();
@@ -20,18 +20,24 @@ function SideNav() {
     },
     {
       id: 2,
+      name: 'Create Project',
+      icon: PenBox,
+      path: '/create'
+    },
+    {
+      id: 3,
       name: 'Projects',
       icon: GraduationCap,
       path: '/students'
     },
     {
-      id: 3,
+      id: 4,
       name: 'Attendance',
       icon: Hand,
       path: '/attendance'
     },
     {
-      id: 4,
+      id: 5,
       name: 'Settings',
       icon: Settings,
       path: '/settings'
@@ -51,8 +57,8 @@ function SideNav() {
   };
 
   return (
-    <div className='border shadow-slate-400 shadow-lg h-screen p-5 relative'>
-      <div className='flex items-center gap-2 font-bold'>
+    <div id='sideNavigation' className={`border-2 mix-blend-difference bg-white h-screen p-5 relative md:translate-x-0 md:static transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>     
+     <div className='flex items-center gap-2 font-bold'>
         <Image 
           src={'/SYNTAX SOCIETY.png'}
           width={55}
@@ -63,7 +69,7 @@ function SideNav() {
         <h1>SYNTAX SOCIETY</h1>
       </div>
 
-      <hr className='my-5' />
+      <hr className='my-3 border-2' />
 
       {menuList.map((menu) => (
         <Link href={menu.path} key={menu.id}>
@@ -95,6 +101,7 @@ function SideNav() {
           </LogoutLink>
         </div>
       </div>
+      
     </div>
   );
 }

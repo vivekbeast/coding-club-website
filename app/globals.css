@@ -211,3 +211,17 @@
     font-weight: 400;
     font-style: normal;
   }
+
+  /* Default styling for desktop view */
+.LOGOA {
+  width: 300px;
+  height: 40px;
+}
+
+/* Styling for mobile view */
+@media (max-width: 768px) {
+  .LOGOA {
+      width: 220px; /* Adjust this value as needed */
+      height: 40px; /* Maintain aspect ratio */
+  }
+}
